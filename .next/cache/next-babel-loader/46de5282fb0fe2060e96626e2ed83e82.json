@@ -1,0 +1,1 @@
+{"ast":null,"code":"import \"tailwindcss/tailwind.css\";","map":{"version":3,"sources":["/home/mana/c/lifelogging/pages/_app.js"],"names":[],"mappings":"AAAA,OAAO,0BAAP","sourcesContent":["import \"tailwindcss/tailwind.css\""]},"metadata":{},"sourceType":"module"}

@@ -1,19 +1,22 @@
 import { useState } from "react"
+import { connect } from "react-redux"
+import { addCell } from "../redux/actions" 
 
 function Cell(props) {
 
-    const [picked, Setpicked] = useState(false)
+    const [picked, setpicked] = useState(false)
+    const [items, setItems] = useState([])
 
     function HandleOnClick() {
-        Setpicked(!picked)
-    }
+        setpicked(!picked)
+        props.addCell(props.name)
 
-    const day_data = []
+        // setItems((prevItems) => {
+        //     return [...prevItems, props.name]
+        //     })
+        }
     
-    if (picked) {
-        day_data.push(props.name)
-    }
-    console.log(day_data)
+    console.log(items)
     return (
         <div>
             <button type="button" onClick={HandleOnClick} className={`justify-center rounded-full border border-gray-300 shadow-sm px-2 py-2 ${picked? "bg-"+props.bg+"-300" : "bg-"+props.bg+"-100"}  
@@ -24,4 +27,4 @@ function Cell(props) {
     )
 }
 
-export default Cell
+export default connect(null, {addCell})(Cell)

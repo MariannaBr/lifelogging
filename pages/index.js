@@ -8,7 +8,7 @@ function HomePage() {
         <div className="mx-8 lg:mx-32">
             <Header name={"Marianna"}/>
             <div className="flex justify-between">
-                {inputs.categories.map(cat => <Category key={cat.id} name={cat.name} bg={cat.color} cells={cat.cells}/>)}
+                {inputs.categories.map(cat => <Category key={cat.id} id={cat.id} name={cat.name} bg={cat.color} cells={cat.cells}/>)}
             </div>
             
         </div>

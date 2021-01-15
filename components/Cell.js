@@ -1,15 +1,17 @@
 import { useState } from "react"
 import { connect } from "react-redux"
-import { addCell } from "../redux/actions" 
+import { addCell } from "../redux/actions"
+import { useDispatch } from "react-redux"
 
 function Cell(props) {
 
     const [picked, setpicked] = useState(false)
     const [items, setItems] = useState([])
+    const dispatch = useDispatch()
 
     function HandleOnClick() {
         setpicked(!picked)
-        props.addCell(props.name)
+        dispatch({type: "ADD_CELL", payload: props.name})
 
         // setItems((prevItems) => {
         //     return [...prevItems, props.name]
@@ -27,4 +29,4 @@ function Cell(props) {
     )
 }
 
-export default connect(null, {addCell})(Cell)
+export default Cell

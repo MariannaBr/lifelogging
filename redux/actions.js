@@ -1,4 +1,4 @@
-import { ADD_CATEGORY, ADD_CELL} from "./actionTypes"
+import { ADD_DAY, ADD_CATEGORY, ADD_CELL } from "./actionTypes"
 import {today} from "../components/Today"
 
 let dayId = today
@@ -11,12 +11,9 @@ export const addDay = content => ({
     }
 })
 
-export const addCategory = (props) => ({
+export const addCategory = content => ({
     type: ADD_CATEGORY,
-    payload: {
-        name: props.name,
-        cells: [props.cells]
-    }
+    payload: {content}
 })
 
 export const addCell = name => ({

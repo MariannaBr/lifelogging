@@ -1,5 +1,6 @@
 const inputs = {
     categories: [{
+        id: 0,
         name: "mood",
         color: 'yellow',
         cells: [
@@ -14,6 +15,7 @@ const inputs = {
             }
         ]
     }, {
+        id: 1,
         name: "food",
         color: 'red',
         cells: [
@@ -28,6 +30,7 @@ const inputs = {
             }
         ]
     }, {
+        id: 2,
         name: "liquids",
         color: 'pink',
         cells: [
@@ -40,6 +43,7 @@ const inputs = {
             }
         ]
     }, {
+        id: 3,
         name: "suplements",
         color: 'purple',
         cells: [
@@ -54,6 +58,7 @@ const inputs = {
             }
         ]
     }, {
+        id: 4,
         name: "workouts",
         color: 'indigo',
         cells: [
@@ -66,6 +71,7 @@ const inputs = {
             }
         ]
     }, {
+        id: 5,
         name: "body",
         color: 'blue',
         cells: [
@@ -80,6 +86,7 @@ const inputs = {
             }
         ]
     }, {
+        id: 6,
         name: "menst. cycle",
         color: 'green',
         cells: [
@@ -94,6 +101,7 @@ const inputs = {
             }
         ]
     }, {
+        id: 7,
         name: "sleep",
         color: 'gray',
         cells: [

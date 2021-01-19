@@ -1,22 +1,20 @@
-import { ADD_DAY, ADD_CATEGORY, ADD_CELL } from "./actionTypes"
-import {today} from "../components/Today"
+import { ADD_CELL, REMOVE_CELL } from "./actionTypes"
 
-let dayId = today
 
-export const addDay = content => ({
-    type: ADD_DAY,
+export const addCell = (dayId, categoryName, cellName) => ({
+    type: ADD_CELL,
     payload: {
-        id: dayId,
-        content
+        dayId: dayId,
+        categoryName: categoryName,
+        cellName: cellName
     }
 })
 
-export const addCategory = content => ({
-    type: ADD_CATEGORY,
-    payload: {content}
-})
-
-export const addCell = name => ({
-    type: ADD_CELL,
-    payload: {name}
+export const removeCell = (dayId, categoryName, cellName) => ({
+    type: REMOVE_CELL,
+    payload: {
+        dayId: dayId,
+        categoryName: categoryName,
+        cellName: cellName
+    }
 })

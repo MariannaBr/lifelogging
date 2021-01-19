@@ -2,10 +2,11 @@ import { useState } from "react"
 import Cell from "./Cell"
 import { connect } from "react-redux"
 import { getCells } from "../redux/selectors"
-import { addCategory } from "../redux/actions"
-import { addDay } from "../redux/actions"
+import { addCell, removeCell } from "../redux/actions"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
+import getDate from "../helpers/todayDate"
+
 
 const selectCategories = state => state.categories
 
@@ -17,9 +18,11 @@ function Category(props) {
 
     function HandleClick() {
         SetIsOpen(!isOpen)
-        dispatch({type: "ADD_CATEGORY", payload: props.name})
     }
     
+    function CellSelected(cellName, selected) {
+        dispatch(selected ? addCell(getDate(), props.name, cellName) : removeCell(getDate(), props.name, cellName))
+    }
 
     return (
         <div className="relative inline-block text-left">
@@ -40,26 +43,11 @@ function Category(props) {
       To: "transform opacity-0 scale-95" */}
             {isOpen && <div className="origin-top-right absolute right-0 mt-2 w-auto">
                 <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                    {props.cells.map(cell => <Cell key={cell.id} id={props.id} name={cell.name} bg={props.bg}/>)}
+                    {props.cells.map(cell => <Cell key={cell.id} id={props.id} name={cell.name} bg={props.bg} selected={CellSelected} />)}
                 </div>
             </div>}
         </div>
     )
 }
 
-// const mapStateToProps = state => {
-//     const {cell, cells} = state.cellsList || {}
-//     const cellsList = cells ? cells.map(name => (cell ? {...cell[name], name} : null)) : null
-//     return {cellsList}
-// }
-
-// const mapStateToProps = state => {
-//     const {category, categories} = state.days || {}
-//     const categoryList = categories ? categories.map(name => (category ? {...category[name], name} : null)) : null
-//     return {categoryList}
-// }
-
 export default Category
-//export default connect(state => ({cells: getCells(state)}))(Category)
-
-//export default Category

@@ -1,4 +1,4 @@
-import {Today} from "./Today"
+import Today from "./Today"
 
 function Header(props) {
     return (

@@ -1,27 +1,49 @@
-import { ADD_DAY, ADD_CATEGORY, ADD_CELL } from "../actionTypes"
-import {today} from "../../components/Today"
+import { ADD_DAY, ADD_CATEGORY, ADD_CELL, REMOVE_CELL } from "../actionTypes"
 
-let dayId = today
-
-const initialState = {category:"", cells:[]}
-
+const initialState = {
+    days: {
+        "0": {
+            categories: {
+                "test": {
+                    cells: ["test"]
+                }
+            }
+        }
+    },
+    cells: {
+        "test": {
+            category: "test",
+            days: ["0"]
+        }
+    }
+}
 
 export default function(state = initialState, action) {
     switch(action.type) {
-        case ADD_CATEGORY: {
-            return {
-                ...state,
-                category: [...state.category, action.payload]
-                }
-        }
-            
         case ADD_CELL: {
+            const { payload } = action
+            const { dayId, categoryName, cellName } = payload
             return {
                 ...state,
-                category: [...state.category],
-                cells: [...state.cells, action.payload]
+                days: {
+                    ...state?.days,
+                    [dayId]: {
+                        ...state?.days[dayId],
+                        categories: {
+                            ...state?.days[dayId]?.categories,
+                            [categoryName]: {
+                                ...state?.days[dayId]?.categories[categoryName],
+                                cells: [
+                                    ...state?.days[dayId]?.categories[categoryName]?.cells || [],
+                                    cellName
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         }
+
         default:
             return state
     }

@@ -1,4 +1,4 @@
-import { ADD_DAY, ADD_CATEGORY, ADD_CELL, REMOVE_CELL } from "../actionTypes"
+import { ADD_CELL, REMOVE_CELL } from "../actionTypes"
 
 const initialState = {
     days: {
@@ -16,6 +16,10 @@ const initialState = {
             days: ["0"]
         }
     }
+}
+
+function deleteItem(arr, val) {
+    return (arr.filter((cell) => cell != val))
 }
 
 export default function(state = initialState, action) {
@@ -39,6 +43,44 @@ export default function(state = initialState, action) {
                                 ]
                             }
                         }
+                    }
+                },
+                cells: {
+                    ...state?.cells,
+                    [cellName]: {
+                        ...state?.cells[cellName],
+                        category: categoryName,
+                        days: [
+                            ...state?.cells[cellName]?.days || [],
+                            dayId
+                        ]
+                    }
+                }
+            }
+        }
+        case REMOVE_CELL: {
+            const { payload } = action
+            const { dayId, categoryName, cellName } = payload
+            return {
+                ...state,
+                days: {
+                    ...state?.days,
+                    [dayId]: {
+                        ...state?.days[dayId],
+                        categories: {
+                            ...state?.days[dayId]?.categories,
+                            [categoryName]: {
+                                ...state?.days[dayId]?.categories[categoryName],
+                                cells: deleteItem(state?.days[dayId]?.categories[categoryName]?.cells, cellName)
+                            }
+                        }
+                    }
+                },
+                cells: {
+                    ...state?.cells,
+                    [cellName]: {
+                        ...state?.cells[cellName],
+                        days: deleteItem(state?.cells[cellName]?.days, dayId)
                     }
                 }
             }

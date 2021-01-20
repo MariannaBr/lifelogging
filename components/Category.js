@@ -1,18 +1,12 @@
 import { useState } from "react"
 import Cell from "./Cell"
-import { connect } from "react-redux"
 import { getCells } from "../redux/selectors"
 import { addCell, removeCell } from "../redux/actions"
-import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import getDate from "../helpers/todayDate"
 
-
-const selectCategories = state => state.categories
-
 function Category(props) {
 
-    const Categories = useSelector(selectCategories)
     const [isOpen, SetIsOpen] = useState(false)
     const dispatch = useDispatch()
 

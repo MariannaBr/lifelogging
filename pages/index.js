@@ -1,6 +1,7 @@
 import Header from "../components/Header"
 import Category from "../components/Category"
 import inputs from "../public/inputs"
+import Statistics from "../components/Statistics"
 
 function HomePage() {
 
@@ -10,7 +11,7 @@ function HomePage() {
             <div className="flex justify-between">
                 {inputs.categories.map(cat => <Category key={cat.id} id={cat.id} name={cat.name} bg={cat.color} cells={cat.cells}/>)}
             </div>
-            
+            <Statistics />
         </div>
     )
 }

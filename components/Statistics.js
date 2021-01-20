@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import Day from "./Day"
 
 const selectDays = state => state.categories.days
 
@@ -7,39 +8,15 @@ function Statistics() {
     const days = useSelector(selectDays)
 
     // Array of all days [{},{},{}]
-    const daysValues = Object.values(days)
-    console.log("days", daysValues)
-
-    // Array of all days' ids ["dayId_1","dayId_2", "dayId_3" ]
-    const dayIds = daysValues.map((day) => day.id)
-    console.log("day", dayIds)
-
-    // Array of all categories [{}, {}, {}]
-    const categoriesValues = daysValues.map((day) => day.categories)
-    console.log("categories objects", categoriesValues)
-
-    // Array of arrays of objects - categories [[{}, {}, {}]]
-    const categories = categoriesValues.map((categories) => Object.values(categories))
-    console.log("categories", categories)
-
-    // Array of arrays with category [[""], [""], [""]]
-    const categoriesIds = categoriesValues.map((categories) => Object.values(categories).map((category) => category.id))
-    console.log("category", categoriesIds[0])
-
-    const cellsValues = categories.map((category) => category.cells)
-    console.log("cells", cellsValues)
-
-    //const cells = cellsValues.map((category) => catego)
+    const daysValues = Object.values(days).slice(1)
 
     return (
-        <div className=" mt-52">
-            <h1>Statistics</h1>
-            <div>
-                Day: {dayIds}
+        <div className=" mt-60 mb-20 relative">
+            <div className="mb-10 text-4xl font-bold text-green-300 relative flex justify-center">Statistics</div>
+            <div className="relative grid">
+                {daysValues.map((day) => <Day key={day.id} id={day.id} categories={day.categories}/>)}
             </div>
-            <div>
-                Categories: {categoriesIds}
-            </div>
+            
         </div>
     )
     

@@ -7,7 +7,7 @@ const initialState = {
             id: "0",
             categories: {
                 "test": {
-                    id: "test",
+                    id: "food",
                     cells: ["test"]
                 }
             }

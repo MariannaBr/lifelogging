@@ -7,6 +7,9 @@ import getDate from "../helpers/todayDate"
 
 function Category(props) {
 
+    const categoryName = props.name
+    const categoryColor = props.bg
+
     const [isOpen, SetIsOpen] = useState(false)
     const dispatch = useDispatch()
 
@@ -44,4 +47,4 @@ function Category(props) {
     )
 }
 
-export default Category
+export default Category 

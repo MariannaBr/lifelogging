@@ -3,16 +3,33 @@ import deleteItem from "../../helpers/deleteItem"
 
 const initialState = {
     days: {
-        "0": {
-            id: "0",
+        "1.jan": {
+            id: "1.jan",
             categories: {
-                "test": {
+                "mood": {
+                    id: "mood",
+                    cells: ["happy", "sad"]
+                },
+                "food": {
                     id: "food",
-                    cells: ["test"]
+                    cells: ["pasta", "tomatoes"]
+                }
+            }
+        },
+        "2.jan": {
+            id: "2.jan",
+            categories: {
+                "mood": {
+                    id: "mood",
+                    cells: ["angry", "sad"]
+                },
+                "food": {
+                    id: "food",
+                    cells: ["potatoes", "bread"]
                 }
             }
         }
-    },
+    }
 }
 
 export default function cellReducer(state = initialState, action) {

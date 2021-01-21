@@ -5,7 +5,6 @@ function DayCategory(props) {
 
     function findColor(categoryName, definedCategories){
         for (var i=0; i<definedCategories.length; i++) {
-            console.log(categoryName, definedCategories[i].name)
             if (categoryName === definedCategories[i].name) {
                 return definedCategories[i].color
             }

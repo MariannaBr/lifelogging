@@ -31,6 +31,22 @@ export default function chartOptions(categoryColor) {
         dataLabels: {
             enabled: false
         },
+        xaxis: {
+            labels: {
+                rotate: -45,
+                hideOverlappingLabels: true,
+                minHeight: 0
+            },
+        },
+        yaxis: {
+            labels: {
+                minWidth: 100,
+                style: {
+                    colors: [chartColor],
+                    fontSize: "14px"
+                }
+            }
+        },
         plotOptions: {
             heatmap: {
                 radius: 2,

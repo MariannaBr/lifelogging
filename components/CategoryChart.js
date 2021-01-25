@@ -38,25 +38,36 @@ function CategoryChart(props) {
         }
     }
 
+    function simplifyDate(date) {
+        const day = date.slice(date.length-2)
+        const month = date.slice(5,7)
+        const chartDate = day + "." + month + "."
+        return chartDate
+    }
+    simplifyDate("2021-01-02")
+
     const series = props.defaultCells.map((cell) => {
         return {
           name: cell.name,
           data: defaultDays.map((day) => {
               return {
-                  x: day,
+                  x: simplifyDate(day),
                   y: cellHappenedToday(cell.name, day)
               }
           })
         }
       })
 
+    const chartWidth = (defaultDays.length*15).toString()
+    const chartHeight = (props.defaultCells.length*50).toString()
+
     return (
         <div className="flex flex-row">
-            <div className={`text-lg font-semibold text-${props.color}-400`}>
+            <div className={`text-lg w-1/5 font-semibold text-${props.color}-400`}>
                 {props.id}
             </div>
             <div>
-                <Chart options={chartOptions(props.color)} series={series} type="heatmap" width="400" height="auto"/>
+                <Chart options={chartOptions(props.color)} series={series} type="heatmap" width={chartWidth} height={chartHeight}/>
             </div>
             
         </div>

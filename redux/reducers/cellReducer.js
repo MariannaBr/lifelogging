@@ -3,8 +3,8 @@ import deleteItem from "../../helpers/deleteItem"
 
 const initialState = {
     days: {
-        "2021-1-20": {
-            id: "2021-1-20",
+        "2020-12-01": {
+            id: "2020-12-01",
             categories: {
                 "mood": {
                     id: "mood",
@@ -16,7 +16,7 @@ const initialState = {
                 }
             }
         },
-        "2021-1-21": {
+        "2021-01-21": {
             id: "2021-1-21",
             categories: {
                 "mood": {

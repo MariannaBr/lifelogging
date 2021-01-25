@@ -3,25 +3,25 @@ import deleteItem from "../../helpers/deleteItem"
 
 const initialState = {
     days: {
-        "1.jan": {
-            id: "1.jan",
+        "2021-1-20": {
+            id: "2021-1-20",
             categories: {
                 "mood": {
                     id: "mood",
-                    cells: ["happy", "sad"]
+                    cells: ["happy", "motivated"]
                 },
                 "food": {
                     id: "food",
-                    cells: ["pasta", "tomatoes"]
+                    cells: ["pasta", "bread"]
                 }
             }
         },
-        "2.jan": {
-            id: "2.jan",
+        "2021-1-21": {
+            id: "2021-1-21",
             categories: {
                 "mood": {
                     id: "mood",
-                    cells: ["angry", "sad"]
+                    cells: ["happy", "fine"]
                 },
                 "food": {
                     id: "food",

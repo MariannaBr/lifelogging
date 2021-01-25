@@ -19,7 +19,7 @@ function Statistics() {
                 {daysValues.map((day) => <Day key={day.id} id={day.id} categories={day.categories}/>)}
             </div>
             <div>
-                {inputs.categories.map((category) => <CategoryChart key={category.id} id={category.name} cells={category.cells} />)}
+                {inputs.categories.map((category) => <CategoryChart key={category.id} id={category.name} defaultCells={category.cells} color={category.color} />)}
             </div>
             
         </div>

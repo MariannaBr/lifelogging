@@ -13,7 +13,6 @@ function Cell(props) {
         setPicked(selected)
     }
     
-    console.log(items)
     return (
         <div>
             <button type="button" onClick={HandleOnClick} className={`justify-center rounded-full border border-gray-300 shadow-sm px-2 py-2 ${picked? "bg-"+props.bg+"-300" : "bg-"+props.bg+"-100"}  

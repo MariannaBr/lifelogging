@@ -3,7 +3,7 @@ import Cell from "./Cell"
 import { getCells } from "../redux/selectors"
 import { addCell, removeCell } from "../redux/actions"
 import { useDispatch } from "react-redux"
-import getDate from "../helpers/todayDate"
+import { todayChart } from "../helpers/todayDate"
 
 function Category(props) {
 
@@ -18,7 +18,7 @@ function Category(props) {
     }
     
     function CellSelected(cellName, selected) {
-        dispatch(selected ? addCell(getDate(), props.name, cellName) : removeCell(getDate(), props.name, cellName))
+        dispatch(selected ? addCell(todayChart, props.name, cellName) : removeCell(todayChart, props.name, cellName))
     }
 
     return (

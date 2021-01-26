@@ -33,7 +33,7 @@ export default function chartOptions(categoryColor) {
         },
         xaxis: {
             labels: {
-                rotate: -45,
+                rotate: -90,
                 hideOverlappingLabels: true,
                 minHeight: 0
             },

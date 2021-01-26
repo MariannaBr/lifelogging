@@ -20,22 +20,18 @@ function CategoryChart(props) {
     const defaultDays = generateDefaultDays(new Date(daysIds[0]), new Date(todayChart))
 
     function cellHappenedToday(cell, defaultDay) {
-        if (daysIds.includes(defaultDay)) {
-            return daysValues.reduce((total, day) => {
-                if (day.id === defaultDay) {
-                    const categoryIds = Object.values(day.categories).map((cat) => cat.id)
-                    if (categoryIds.includes(props.id)) {
-                        const cells = Object.values(day.categories[props.id].cells)
-                        if (cells.includes(cell)) {
-                            return total + 1
-                        }
+        return daysValues.reduce((total, day) => {
+            if (day.id === defaultDay) {
+                const categoryIds = Object.values(day.categories).map((cat) => cat.id)
+                if (categoryIds.includes(props.id)) {
+                    const cells = Object.values(day.categories[props.id].cells)
+                    if (cells.includes(cell)) {
+                        return total + 1
                     }
-                }                
-                return total 
-            }, 0)
-        } else {
-            return 0
-        }
+                }
+            }                
+            return total 
+        }, 0)
     }
 
     function simplifyDate(date) {

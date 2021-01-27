@@ -3,12 +3,12 @@ import deleteItem from "../../helpers/deleteItem"
 
 const initialState = {
     days: {
-        "2020-12-01": {
-            id: "2020-12-01",
+        "2021-01-01": {
+            id: "2021-01-01",
             cells: ["happy", "fine", "potatoes", "bread"]
         },
         "2021-01-21": {
-            id: "2021-1-21",
+            id: "2021-01-21",
             cells: ["happy", "rice", "bread"]
             
         }

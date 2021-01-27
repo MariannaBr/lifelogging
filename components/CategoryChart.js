@@ -1,52 +1,43 @@
-import { useSelector } from "react-redux"
 import dynamic from "next/dynamic"
-import { todayChart } from "../helpers/todayDate"
-import generateDefaultDays from "../helpers/defaultDays"
 import chartOptions from "../helpers/chartOptions"
 import simplifyDate from "../helpers/simplifyDate"
 
-const selectDays = state => state.categories.days
 const Chart = dynamic(() => import ("react-apexcharts"), {ssr: false})
 
 function CategoryChart(props) {
-    
-    const storeDays = useSelector(selectDays)
 
-    // Array of objects [{id:"", cells:[]}, {id:"", cells:[]}]
-    const storeDaysValues = Object.values(storeDays)
+    let dataY = {}
 
-    // get array of days' ids ["2021-1-1", "2021-1-2"], inputs: data - array of objects [{}, {}]
-    const storeDaysIds = storeDaysValues.map((day) => day.id)
-
-    // get array of dates from second day to today ["2021-1-1", "2021-1-2"]
-    const chartDays = generateDefaultDays(new Date(storeDaysIds[0]), new Date(todayChart))
-
-
-    function cellHappenedToday(cell, chartDay) {
-        return storeDaysValues.reduce((total, day) => {
-            if (day.id === chartDay) {
-                const storeCellsIds = Object.values(day.cells)
-                if (storeCellsIds.includes(cell)) {
-                    return total + 1
-                }
-            }               
-            return total 
-        }, 0)
+    // giving 0 to every cell in every chart day, default values for chart
+    // inputs: chartDays ["", ""], defaultCells [{name:""}, {name:""}, {name:""}]
+    for (var i=0; i<props.chartDays.length;i++) {
+        dataY[props.chartDays[i]] = {}
+        for (var j=0; j<props.defaultCells.length; j++) {
+            dataY[props.chartDays[i]][props.defaultCells[j].name] = 0
+        }
     }
 
-    const series = props.defaultCells.map((cell) => {
-        return {
-          name: cell.name,
-          data: chartDays.map((day) => {
-              return {
-                  x: simplifyDate(day),
-                  y: cellHappenedToday(cell.name, day)
-              }
-          })
+    // giving 1 to cell in day when it happened, data from store
+    // inputs: storeDaysValues [{id:"", cells:[]}, {id:"", cells:[]}]
+    for (var i=0; i<props.storeDaysValues.length; i++) {
+        for (j=0; j<props.storeDaysValues[i].cells.length; j++) {
+            dataY[props.storeDaysValues[i].id][props.storeDaysValues[i].cells[j]] = 1
         }
-      })
+    }
 
-    const chartWidth = (chartDays.length*15).toString()
+    const Series = props.defaultCells.map((cell) => {
+        return {
+            name: cell.name,
+            data: props.chartDays.map((day) => {
+                return {
+                    x: simplifyDate(day),
+                    y: dataY[day][cell.name]
+                }
+            })
+        }
+    })
+
+    const chartWidth = (props.chartDays.length*15).toString()
     const chartHeight = (props.defaultCells.length*50).toString()
 
     return (
@@ -55,7 +46,7 @@ function CategoryChart(props) {
                 {props.id}
             </div>
             <div>
-                <Chart options={chartOptions(props.color)} series={series} type="heatmap" width={chartWidth} height={chartHeight}/>
+                <Chart options={chartOptions(props.color)} series={Series} type="heatmap" width={chartWidth} height={chartHeight}/>
             </div>
             
         </div>

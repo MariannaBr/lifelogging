@@ -24,7 +24,17 @@ export default function chartOptions(categoryColor) {
             toolbar: {
                 show: false
             },
-            background: "#111827"
+            foreColor: "#5AFFE9",
+            background: "#111827",
+            animations: {
+                enabled: false,
+                animatedGradually: {
+                    enabled: false
+                },
+                dynamicAnimation: {
+                    enabled: false
+                }
+            }
         },
         legend: {
             show: false
@@ -38,6 +48,10 @@ export default function chartOptions(categoryColor) {
                 hideOverlappingLabels: true,
                 minHeight: 0
             },
+            tickAmount: 7,
+            axisBorder: {
+                offsetY: 7
+            }
         },
         yaxis: {
             labels: {
@@ -50,7 +64,9 @@ export default function chartOptions(categoryColor) {
         },
         plotOptions: {
             heatmap: {
-                radius: 2,
+                radius: 0,
+                enableShades: false,
+                useFillColorAsStroke: true,
                 colorScale: {
                     ranges: [{
                         from: 0,

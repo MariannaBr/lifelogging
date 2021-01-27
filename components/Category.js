@@ -18,7 +18,7 @@ function Category(props) {
     }
     
     function CellSelected(cellName, selected) {
-        dispatch(selected ? addCell(todayChart, props.name, cellName) : removeCell(todayChart, props.name, cellName))
+        dispatch(selected ? addCell(todayChart, cellName) : removeCell(todayChart, cellName))
     }
 
     return (

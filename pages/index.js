@@ -6,12 +6,14 @@ import Statistics from "../components/Statistics"
 function HomePage() {
 
     return (
-        <div className="mx-8 lg:mx-32">
-            <Header name={"Marianna"}/>
-            <div className="flex justify-between">
-                {inputs.categories.map(cat => <Category key={cat.id} id={cat.id} name={cat.name} bg={cat.color} cells={cat.cells}/>)}
+        <div className="bg-gray-900 h-screen">
+            <Header />
+            <div className="my-32 max-w-7xl mx-auto px-4 sm:px-6 flex justify-start">
+                <div className="">
+                    <div className="block"><span className="text-9xl leading-none font-serif font-extrabold gradient-text">LIFELOGGING</span></div>
+                    <div className="flex justify-end"><span className="gradient-text text-4xl leading-none font-serif font-semibold">use data to understand your body</span></div>
+                </div>
             </div>
-            <Statistics />
         </div>
     )
 }

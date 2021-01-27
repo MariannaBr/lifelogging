@@ -1,12 +1,12 @@
 import "tailwindcss/tailwind.css"
+import "../styles/globals.css"
 import { Provider } from 'react-redux'
 import store from '../redux/store'
-import HomePage from "."
 
-function MyApp(params) {
+function MyApp({ Component, pageProps}) {
     return (
         < Provider store={store}>
-            < HomePage />
+            < Component {...pageProps} />
         </Provider>
     )
 }

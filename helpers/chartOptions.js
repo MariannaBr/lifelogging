@@ -24,6 +24,7 @@ export default function chartOptions(categoryColor) {
             toolbar: {
                 show: false
             },
+            background: "#111827"
         },
         legend: {
             show: false
@@ -54,7 +55,7 @@ export default function chartOptions(categoryColor) {
                     ranges: [{
                         from: 0,
                         to: 0,
-                        color: "#F9FAFB"
+                        color: "#111827"
                     }, {
                         from: 1,
                         to: 2,

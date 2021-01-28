@@ -10,20 +10,20 @@ function CategoryChart(props) {
 
     // giving 0 to every cell in every chart day, default values for chart
     // inputs: chartDays ["", ""], defaultCells [{name:""}, {name:""}, {name:""}]
-    for (var i=0; i<props.chartDays.length;i++) {
-        dataY[props.chartDays[i]] = {}
-        for (var j=0; j<props.defaultCells.length; j++) {
-            dataY[props.chartDays[i]][props.defaultCells[j].name] = 0
-        }
-    }
+    props.chartDays.forEach(day => {
+        dataY[day] = {}
+        props.defaultCells.forEach(cell => {
+            dataY[day][cell.name] = 0
+        })
+    })
 
     // giving 1 to cell in day when it happened, data from store
     // inputs: storeDaysValues [{id:"", cells:[]}, {id:"", cells:[]}]
-    for (var i=0; i<props.storeDaysValues.length; i++) {
-        for (j=0; j<props.storeDaysValues[i].cells.length; j++) {
-            dataY[props.storeDaysValues[i].id][props.storeDaysValues[i].cells[j]] = 1
-        }
-    }
+    props.storeDaysValues.forEach(day => {
+        day.cells.forEach(cell => {
+            dataY[day.id][cell] = 1
+        })
+    })
 
     const Series = props.defaultCells.map((cell) => {
         return {

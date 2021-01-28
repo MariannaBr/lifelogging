@@ -3,6 +3,7 @@ import User from "../components/User"
 import Category from "../components/Category"
 import inputs from "../public/inputs"
 import Statistics from "../components/Statistics"
+import DaySum from "../components/DaySum"
 
 function userPage() {
 
@@ -14,10 +15,10 @@ function userPage() {
             <div className="flex justify-between">
                 {inputs.categories.map(cat => <Category key={cat.id} id={cat.id} name={cat.name} bg={cat.color} cells={cat.cells}/>)}
             </div>
+            <DaySum />
             <Statistics />
         </div>
         </div>
-        
     )
 }
 

@@ -1,10 +1,8 @@
 import { useSelector } from "react-redux"
-import Day from "./Day"
 import inputs from "../public/inputs"
 import CategoryChart from "../components/CategoryChart"
 import generateDefaultDays from "../helpers/defaultDays"
 import { todayChart } from "../helpers/todayDate"
-import simplifyDate from "../helpers/simplifyDate"
 
 const selectDays = state => state.categories.days
 
@@ -27,9 +25,6 @@ function Statistics() {
             <div className="mb-10 text-4xl font-bold relative flex justify-center">
                 <span className="gradient-text">Statistics</span>
             </div>
-            {/* <div className="relative grid grid-cols-3">
-                {daysValues.map((day) => <Day key={day.id} id={day.id} categories={day.categories}/>)}
-            </div> */}
             <div>
                 {inputs.categories.map((category) => 
                 <CategoryChart 
@@ -42,7 +37,6 @@ function Statistics() {
             </div>
         </div>
     )
-    
 }
 
 export default Statistics

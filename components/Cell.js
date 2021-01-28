@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux"
 function Cell(props) {
 
     const [picked, setPicked] = useState(false)
-    const [items, setItems] = useState([])
     const dispatch = useDispatch()
 
     function HandleOnClick() {

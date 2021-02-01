@@ -29,16 +29,7 @@ function Category(props) {
                  id={props.id} aria-haspopup="true" aria-expanded="true"> {props.name}
                 </button>
             </div>
-
-    {/* Dropdown panel, show/hide based on dropdown state.
-
-    Entering: "transition ease-out duration-100"
-      From: "transform opacity-0 scale-95"
-      To: "transform opacity-100 scale-100"
-    Leaving: "transition ease-in duration-75"
-      From: "transform opacity-100 scale-100"
-      To: "transform opacity-0 scale-95" */}
-            {isOpen && <div className="origin-top-right absolute right-0 mt-2 w-auto">
+            {isOpen && <div className="origin-top-right relative right-0 mt-2 w-auto flex flex-wrap">
                 <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                     {props.cells.map(cell => <Cell key={cell.id} id={props.id} name={cell.name} bg={props.bg} selected={CellSelected} />)}
                 </div>

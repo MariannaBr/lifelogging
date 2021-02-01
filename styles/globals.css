@@ -3,13 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --primary: #fc1ea3;
-  --secondary: #5AFFE9;
+  --primary: #A78BFA;
+  --secondary: #34D399;
 }
 
 .gradient-text {
-    background: linear-gradient(to left, #fc1ea3, #5AFFE9);
+    background: linear-gradient(to left, #A78BFA, #34D399);
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    /* background-clip: text; */
 }

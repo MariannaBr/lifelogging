@@ -23,9 +23,9 @@ function DaySum(props) {
     }
 
     return (
-        <div className="relative mt-32">
-            <h1 className="text-2xl font-semibold text-primary" >{todayGreeting}</h1>
-            <div>{todayCells.map((cell) => <CategoryCell key={cell} id={cell} color={findColor(cell, Inputs.categories)}/> )}</div>
+        <div className="relative mt-20">
+            <h1 className="text-4xl font-semibold text-primary" >{todayGreeting}</h1>
+            <div className="mt-4">{todayCells.map((cell) => <CategoryCell key={cell} id={cell} color={findColor(cell, Inputs.categories)}/> )}</div>
             <div>
 
             </div>

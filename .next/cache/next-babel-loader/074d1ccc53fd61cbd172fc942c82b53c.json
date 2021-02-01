@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default function simplifyDate(date) {\n  var day = date.slice(date.length - 2);\n  var month = date.slice(5, 7);\n  var chartDate = day + \".\" + month + \".\";\n  return chartDate;\n}","map":null,"metadata":{},"sourceType":"module"}

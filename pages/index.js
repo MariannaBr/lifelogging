@@ -1,26 +1,18 @@
-import firebase from "firebase/app"
-import "firebase/auth"
-import "firebase/firestore"
 
 import Header from "../components/Header"
-
-const firebaseConfig = {
-    apiKey: "AIzaSyD61dFVqFCDh029N8Rr_PQjhJg5xAFOcRk",
-    authDomain: "lifelogging-20c8a.firebaseapp.com",
-    projectId: "lifelogging-20c8a",
-    storageBucket: "lifelogging-20c8a.appspot.com",
-    messagingSenderId: "111948075126",
-    appId: "1:111948075126:web:318b732adea514f32a0f57",
-    measurementId: "G-TRMZ4QPD92"
-  }
-  
-  firebase.initializeApp(firebaseConfig);
+import {
+    useAuthUser,
+    withAuthUser,
+    withAuthUserTokenSSR,
+  } from 'next-firebase-auth'
 
 function HomePage() {
 
+    const AuthUser = useAuthUser()
+
     return (
         <div className="bg-gray-900 h-screen">
-            <Header />
+            <Header email={AuthUser.email} signOut={AuthUser.signOut} />
             <div className="my-32 max-w-7xl mx-auto px-4 sm:px-6 flex justify-start">
                 <div className="">
                     <div className="block"><span className="text-9xl leading-none font-serif font-extrabold gradient-text">LIFELOGGING</span></div>
@@ -30,5 +22,6 @@ function HomePage() {
         </div>
     )
 }
+export const getServerSideProps = withAuthUserTokenSSR()()
 
-export default HomePage
+export default withAuthUser()(HomePage)

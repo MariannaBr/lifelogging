@@ -5,11 +5,19 @@ const initialState = {
     days: {
         "2021-01-01": {
             id: "2021-01-01",
-            cells: ["happy", "fine", "potatoes", "bread"]
+            cells: ["happy", "bread", "water"]
+        },
+        "2021-01-05": {
+            id: "2021-01-05",
+            cells: ["sad", "potatoes", "coffee", "iron"]
+        },
+        "2021-01-12": {
+            id: "2021-01-12",
+            cells: ["motivated", "pasta", "water", "zink"]
         },
         "2021-01-21": {
             id: "2021-01-21",
-            cells: ["happy", "rice", "bread"]
+            cells: ["happy", "rice", "wine", "zink", "iron"]
             
         }
     }

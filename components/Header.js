@@ -1,6 +1,7 @@
 import { useState } from "react"
+import Link from "next/link"
 
-function Header() {
+function Header( { email, signOut }) {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -45,18 +46,26 @@ function Header() {
           </div>
           }
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <a
-              href="/user"
-              className="whitespace-nowrap text-base font-extrabold border border-transparent px-4 py-2 rounded-md text-secondary hover:text-primary"
-            >
-            Login
-            </a>
-            <a
-              href="#"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-gray-900 bg-secondary hover:bg-gray-900 hover:text-primary"
-            >
-              Sign up
-            </a>
+          { email ? (
+            <>
+            <p className="text-primary">Signed in as {email}</p>
+            <button
+              type="button"
+              onClick={()=>{signOut()}}
+              className="whitespace-nowrap text-base font-extrabold border border-transparent px-4 py-2 rounded-md shadow-sm text-gray-900 bg-secondary hover:bg-gray-900 hover:text-primary">
+            Logout
+            </button>
+            </>
+          ) : (
+            <>
+            <Link href="/auth">
+              <a
+                className="whitespace-nowrap text-base font-extrabold border border-transparent px-4 py-2 rounded-md text-secondary hover:text-primary">
+              Login
+              </a>
+            </Link>
+            </>
+          )}
           </div>
         </div>
       </div>

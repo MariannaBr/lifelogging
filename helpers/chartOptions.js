@@ -24,7 +24,7 @@ export default function chartOptions(categoryColor) {
             toolbar: {
                 show: false
             },
-            foreColor: "#5AFFE9",
+            foreColor: "#34D399",
             background: "#111827",
             animations: {
                 enabled: false,

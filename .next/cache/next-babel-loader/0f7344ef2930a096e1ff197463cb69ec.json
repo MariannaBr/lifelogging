@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default function deleteItem(arr, val) {\n  return arr.filter(function (cell) {\n    return cell != val;\n  });\n}","map":null,"metadata":{},"sourceType":"module"}

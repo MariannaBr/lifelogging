@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default function findColor(cellName, definedCategories) {\n  let cellColor = \"\";\n  definedCategories.forEach(category => {\n    category.cells.forEach(cell => {\n      if (cell.name === cellName) {\n        cellColor = category.color;\n      }\n    });\n  });\n  return cellColor;\n}","map":null,"metadata":{},"sourceType":"module"}

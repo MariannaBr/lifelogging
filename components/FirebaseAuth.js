@@ -15,7 +15,7 @@ const firebaseAuthConfig = {
             requireDisplayName: true
         }
     ],
-    signInSuccessUrl: '/',
+    signInSuccessUrl: '/user',
     credentialHelper: 'none',
     callbacks: {
         // https://github.com/firebase/firebaseui-web#signinsuccesswithauthresultauthresult-redirecturl

@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { combineReducers } from \"redux\";\nimport cellReducer from \"./cellReducer\";\nvar rootReducer = combineReducers({\n  categories: cellReducer\n});\nexport default rootReducer;","map":null,"metadata":{},"sourceType":"module"}

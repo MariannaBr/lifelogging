@@ -8,6 +8,7 @@ const handler = async (req, res) => {
         return res.status(400).json({ error: "Missing Authorization header value" })
     }
     const token = req.headers.authorization
+    console.log(token)
 
     try {
         await verifyIdToken(token)

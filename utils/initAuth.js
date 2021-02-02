@@ -72,8 +72,8 @@ const initAuth = () => {
             overwrite: true,
             path: '/',
             sameSite: 'strict',
-            secure: false, // set this to false in local (non-HTTPS) development
-            signed: false,
+            secure: true, // set this to false in local (non-HTTPS) development
+            signed: true,
           },
     })
 }

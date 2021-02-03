@@ -48,11 +48,16 @@ function Header( { email, signOut }) {
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           { email ? (
             <>
-            <p className="text-primary">Signed in as {email}</p>
+            <Link href="/user">
+              <a
+                className="text-base font-extrabold border border-transparent px-4 py-2 mx-6 rounded-md text-gray-900 bg-secondary hover:text-secondary hover:bg-gray-900">
+              My profile
+              </a>
+            </Link>
             <button
               type="button"
               onClick={()=>{signOut()}}
-              className="whitespace-nowrap text-base font-extrabold border border-transparent px-4 py-2 rounded-md shadow-sm text-gray-900 bg-secondary hover:bg-gray-900 hover:text-primary">
+              className="whitespace-nowrap text-base font-extrabold border border-transparent px-4 py-2 rounded-md shadow-sm text-gray-900 bg-primary hover:bg-gray-900 hover:text-primary">
             Logout
             </button>
             </>
@@ -60,7 +65,7 @@ function Header( { email, signOut }) {
             <>
             <Link href="/auth">
               <a
-                className="whitespace-nowrap text-base font-extrabold border border-transparent px-4 py-2 rounded-md text-secondary hover:text-primary">
+                className="text-base font-extrabold border border-transparent px-4 py-2 rounded-md text-gray-900 bg-primary hover:text-primary hover:bg-gray-900">
               Login
               </a>
             </Link>

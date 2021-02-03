@@ -19,7 +19,6 @@ function Statistics() {
     // get array of dates from second day to today ["2021-1-1", "2021-1-2"]
     const chartDays = generateDefaultDays(new Date(storeDaysIds[0]), new Date(todayChart))
 
-
     return (
         <div className=" mt-20 relative">
             <div className="mb-10 text-4xl font-bold relative flex justify-center">

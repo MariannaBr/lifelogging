@@ -4,12 +4,18 @@ import CategoryCell from "./CategoryCell"
 import Inputs from "../public/inputs"
 import { useSelector } from "react-redux"
 import findColor from "../helpers/findColor"
+import { useAuthUser } from 'next-firebase-auth'
+import firebase from "../utils/initFirebase"
 
+//const db = firebase.firestore()
 const selectDays = state => state.categories.days
 
 function DaySum(props) {
 
     const storeDays = useSelector(selectDays)
+    const AuthUser = useAuthUser()
+
+    //db.collection("users").add({user: AuthUser.id, data: storeDays})
 
     // Array of objects [{id:"", cells:[]}, {id:"", cells:[]}]
     const storeDaysValues = Object.values(storeDays)

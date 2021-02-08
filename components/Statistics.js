@@ -3,12 +3,32 @@ import inputs from "../public/inputs"
 import CategoryChart from "../components/CategoryChart"
 import generateDefaultDays from "../helpers/defaultDays"
 import { todayChart } from "../helpers/todayDate"
+import { useAuthUser } from 'next-firebase-auth'
+import { firestoreConnect } from 'react-redux-firebase'
 
 const selectDays = state => state.categories.days
 
-function Statistics() {
+function Statistics(props) {
 
     const storeDays = useSelector(selectDays)
+    console.log(storeDays)
+
+    // const getDataFromFirestore = async () => {
+    //     try {
+    //         if (AuthUser.id) {
+    //             const userRef = db.collection('users').doc(AuthUser.id)
+    //             const user = await userRef.get()
+    //             if (user.exists) {
+    //                 userData = await user.data().data
+    //                 console.log("userData", userData)
+    //             }
+    //         }
+    //     } catch (e) {
+    //         console.log(e, "error in getDataFromFirestore")
+    //     }
+    //     return userData
+    // }
+    // getDataFromFirestore()
 
     // Array of objects [{id:"", cells:[]}, {id:"", cells:[]}]
     const storeDaysValues = Object.values(storeDays)

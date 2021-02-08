@@ -4,7 +4,7 @@ import "firebase/firestore"
 import 'firebase/analytics'
 import 'firebase/functions'
 
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: "AIzaSyD61dFVqFCDh029N8Rr_PQjhJg5xAFOcRk",
     authDomain: "lifelogging-20c8a.firebaseapp.com",
     projectId: "lifelogging-20c8a",

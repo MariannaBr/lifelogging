@@ -21,7 +21,26 @@ function userPage() {
     const storeDays = useSelector(selectDays)
     const AuthUser = useAuthUser()
 
-    db.collection("users").add({user: AuthUser.id, data: storeDays})
+    const addDataToFirestore = async () => {
+        try {
+            if (AuthUser.id) {
+                const userRef = db.collection('users').doc(AuthUser.id)
+                const user = await userRef.get()
+                if (user.exists) {
+                    console.log("was updated")
+                    await userRef.update({data: storeDays})
+                } else {
+                    console.log("was added")
+                    await userRef.set({id: AuthUser.id, data: storeDays})
+                }
+            } 
+        } catch (e) {
+            console.error(e, "Error")
+        }
+    }
+
+    addDataToFirestore()
+
 
     return (
         <div className="bg-gray-900 relative h-full">
@@ -32,7 +51,7 @@ function userPage() {
                 {inputs.categories.map(cat => <Category key={cat.id} id={cat.id} name={cat.name} bg={cat.color} cells={cat.cells}/>)}
             </div>
             <DaySum />
-            <Statistics />
+             <Statistics  />  {/*userData={userData} */}
         </div>
         </div>
     )

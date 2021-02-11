@@ -1,4 +1,4 @@
-import { ADD_CELL, REMOVE_CELL } from "../actionTypes"
+import { ADD_CELL, REMOVE_CELL, SET_STATE } from "../actionTypes"
 import deleteItem from "../../helpers/deleteItem"
 
 const initialState = {
@@ -23,7 +23,7 @@ const initialState = {
     }
 }
 
-export default function cellReducer(state = initialState, action) {
+export default function cellReducer(state = {days:{}}, action) {
     switch(action.type) {
         case ADD_CELL: {
             const { payload } = action
@@ -57,8 +57,16 @@ export default function cellReducer(state = initialState, action) {
                     }
                 }
             }
+        case SET_STATE: {
+            return {
+                days:{
+                  ...action.payload.data
+                }
+            }
+        }
 
         default:
             return state
     }
+
 }

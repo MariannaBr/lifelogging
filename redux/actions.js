@@ -1,4 +1,4 @@
-import { ADD_CELL, REMOVE_CELL } from "./actionTypes"
+import { ADD_CELL, REMOVE_CELL, SET_STATE } from "./actionTypes"
 
 
 export const addCell = (dayId, cellName) => ({
@@ -6,6 +6,13 @@ export const addCell = (dayId, cellName) => ({
     payload: {
         dayId: dayId,
         cellName: cellName
+    }
+})
+
+export const setState = (data) => ({
+    type: SET_STATE,
+    payload: {
+        data: data
     }
 })
 

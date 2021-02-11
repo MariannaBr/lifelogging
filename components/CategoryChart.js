@@ -5,6 +5,7 @@ import simplifyDate from "../helpers/simplifyDate"
 const Chart = dynamic(() => import ("react-apexcharts"), {ssr: false})
 
 function CategoryChart(props) {
+    console.log("CategoryChart")
 
     let dataY = {}
 
@@ -37,7 +38,7 @@ function CategoryChart(props) {
         }
     })
 
-    const chartWidth = (props.chartDays.length*15).toString()
+    const chartWidth = (Math.max(props.chartDays.length*15, 400)).toString()
     const chartHeight = (props.defaultCells.length*50).toString()
 
     return (

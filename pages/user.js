@@ -10,38 +10,34 @@ import {
     withAuthUserTokenSSR,
     AuthAction,
   } from 'next-firebase-auth'
-import { useSelector } from "react-redux"
 import firebase from "../utils/initFirebase"
+import { setState } from "../redux/actions"
+import { useDispatch } from "react-redux"
 
 const db = firebase.firestore()
-const selectDays = state => state.categories.days
 
 function userPage() {
 
-    const storeDays = useSelector(selectDays)
     const AuthUser = useAuthUser()
+    const dispatch = useDispatch()
 
-    const addDataToFirestore = async () => {
+    const fetchDataFromFirestore = async (userId) => {
         try {
-            if (AuthUser.id) {
-                const userRef = db.collection('users').doc(AuthUser.id)
+            if (userId) {
+                const userRef = db.collection('users').doc(userId)
                 const user = await userRef.get()
                 if (user.exists) {
-                    console.log("was updated")
-                    await userRef.update({data: storeDays})
-                } else {
-                    console.log("was added")
-                    await userRef.set({id: AuthUser.id, data: storeDays})
+                    console.log("user found")
+                    let userData = user.data().data
+                    dispatch(setState(userData))
                 }
-            } 
+            }
         } catch (e) {
-            console.error(e, "Error")
-        }
+            console.log("Error in fetchDataFromFirestore", e)
+        }        
     }
-
-    addDataToFirestore()
-
-
+    fetchDataFromFirestore(AuthUser.id)
+    
     return (
         <div className="bg-gray-900 relative h-full">
             <Header email={AuthUser.email} signOut={AuthUser.signOut} />

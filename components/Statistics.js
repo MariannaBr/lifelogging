@@ -4,33 +4,19 @@ import CategoryChart from "../components/CategoryChart"
 import generateDefaultDays from "../helpers/defaultDays"
 import { todayChart } from "../helpers/todayDate"
 import { useAuthUser } from 'next-firebase-auth'
-import { firestoreConnect } from 'react-redux-firebase'
+import { addDataToFirestore } from '../helpers/FirestoreData'
 
 const selectDays = state => state.categories.days
 
-function Statistics(props) {
+function Statistics() {
+    console.log("Statistics")
 
+    const AuthUser = useAuthUser()
     const storeDays = useSelector(selectDays)
-    console.log(storeDays)
 
-    // const getDataFromFirestore = async () => {
-    //     try {
-    //         if (AuthUser.id) {
-    //             const userRef = db.collection('users').doc(AuthUser.id)
-    //             const user = await userRef.get()
-    //             if (user.exists) {
-    //                 userData = await user.data().data
-    //                 console.log("userData", userData)
-    //             }
-    //         }
-    //     } catch (e) {
-    //         console.log(e, "error in getDataFromFirestore")
-    //     }
-    //     return userData
-    // }
-    // getDataFromFirestore()
+    addDataToFirestore(AuthUser.id, storeDays)
 
-    // Array of objects [{id:"", cells:[]}, {id:"", cells:[]}]
+    console.log("storeDays", storeDays)
     const storeDaysValues = Object.values(storeDays)
 
     // get array of days' ids ["2021-1-1", "2021-1-2"], inputs: data - array of objects [{}, {}]
@@ -38,6 +24,7 @@ function Statistics(props) {
 
     // get array of dates from second day to today ["2021-1-1", "2021-1-2"]
     const chartDays = generateDefaultDays(new Date(storeDaysIds[0]), new Date(todayChart))
+
 
     return (
         <div className=" mt-20 relative">

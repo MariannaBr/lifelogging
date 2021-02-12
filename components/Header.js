@@ -93,8 +93,8 @@ function Header( { email, signOut }) {
               <div>
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                  alt="Workflow"
+                  src="logo.svg"
+                  alt=""
                 ></img>
               </div>
               <div className="-mr-2">
@@ -125,20 +125,29 @@ function Header( { email, signOut }) {
             </div>
           </div>
           <div className="py-6 px-5 space-y-6">
-            <div>
-              <a
-                href="#"
-                className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-secondary hover:bg-primary"
-              >
-                Sign up
+          { email ? (
+            <>
+            <Link href='/user'>
+              <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-primary hover:text-primary hover:bg-gray-900">
+                My profile
               </a>
-              <p className="mt-6 text-center text-base font-medium text-secondary">
-                You are already a user? &nbsp;
-                <a href="/user" className="text-primary border border-transparent px-2 py-1 rounded-md hover:text-black hover:bg-secondary">
-                  Login
-                </a>
-              </p>
-            </div>
+            </Link>
+            <button
+             type="button"
+             onClick={()=>{signOut()}}
+             className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-secondary hover:bg-primary">
+            Logout
+            </button>
+            </>
+          ) : (
+            <>
+            <Link href="/auth">
+              <a className=" w-full flex items-center justify-center text-gray-900 bg-primary border border-transparent px-2 py-2 font-base rounded-md hover:text-black hover:bg-secondary">
+                Login
+              </a>
+            </Link>
+            </>
+          )}
           </div>
         </div>
       </div>

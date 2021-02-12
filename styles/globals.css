@@ -12,3 +12,8 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+.gradient-background {
+  background: -webkit-linear-gradient(to left, #A78BFA, #34D399);
+  background: linear-gradient(to left, #A78BFA, #34D399)
+}

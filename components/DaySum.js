@@ -1,21 +1,14 @@
-import {todayGreeting} from "../helpers/Dates"
 import { todayChart } from "../helpers/Dates"
 import CategoryCell from "./CategoryCell"
 import Inputs from "../public/inputs"
 import { useSelector } from "react-redux"
 import findColor from "../helpers/findColor"
-import { useAuthUser } from 'next-firebase-auth'
-import firebase from "../utils/initFirebase"
 
-//const db = firebase.firestore()
 const selectDays = state => state.categories.days
 
 function DaySum(props) {
 
     const storeDays = useSelector(selectDays)
-    const AuthUser = useAuthUser()
-
-    //db.collection("users").add({user: AuthUser.id, data: storeDays})
 
     // Array of objects [{id:"", cells:[]}, {id:"", cells:[]}]
     const storeDaysValues = Object.values(storeDays)
@@ -30,7 +23,7 @@ function DaySum(props) {
 
     return (
         <div className="relative mt-20">
-            <h1 className="text-4xl font-semibold text-primary" >{todayGreeting}</h1>
+            <h1 className="text-4xl font-semibold text-primary" >Logged items:</h1>
             <div className="mt-4">{todayCells.map((cell) => <CategoryCell key={cell} id={cell} color={findColor(cell, Inputs.categories)}/> )}</div>
             <div>
 

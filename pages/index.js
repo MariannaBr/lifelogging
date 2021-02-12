@@ -12,13 +12,16 @@ function HomePage() {
 
     return (
         <div className="bg-gray-900 h-screen">
-            <Header email={AuthUser.email} signOut={AuthUser.signOut} />
-            <div className="my-32 max-w-7xl mx-auto px-4 sm:px-6 flex justify-start">
-                <div className="">
-                    <div className="block"><span className="text-9xl leading-none font-serif font-extrabold gradient-text">LIFELOGGING</span></div>
-                    <div className="flex justify-end"><span className="gradient-text text-4xl leading-none font-serif font-semibold">use data to understand your body</span></div>
+            <div className=" mx-auto md:mx-10">
+                <Header email={AuthUser.email} signOut={AuthUser.signOut} />
+                <div className="flex my-32 justify-center">
+                    <div className="">
+                        <div className="flex"><span className=" text-5xl sm:text-7xl lg:text-8xl xl:text-9xl leading-none font-serif font-extrabold gradient-text">LIFELOGGING</span></div>
+                        <div className="flex justify-end"><span className="gradient-text text-base sm:text-2xl lg:text-3xl xl:text-4xl leading-2 font-serif font-semibold">use data to understand your body</span></div>
+                    </div>
                 </div>
             </div>
+            
         </div>
     )
 }

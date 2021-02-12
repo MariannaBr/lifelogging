@@ -1,5 +1,5 @@
-import {todayGreeting} from "../helpers/todayDate"
-import { todayChart } from "../helpers/todayDate"
+import {todayGreeting} from "../helpers/Dates"
+import { todayChart } from "../helpers/Dates"
 import CategoryCell from "./CategoryCell"
 import Inputs from "../public/inputs"
 import { useSelector } from "react-redux"

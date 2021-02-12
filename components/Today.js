@@ -1,5 +1,5 @@
 
-import {todayGreeting} from "../helpers/todayDate" 
+import {todayGreeting} from "../helpers/Dates" 
 
 function Today() {
     

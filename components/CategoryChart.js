@@ -5,7 +5,6 @@ import simplifyDate from "../helpers/simplifyDate"
 const Chart = dynamic(() => import ("react-apexcharts"), {ssr: false})
 
 function CategoryChart(props) {
-    console.log("CategoryChart")
 
     let dataY = {}
 

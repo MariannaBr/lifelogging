@@ -3,7 +3,7 @@ import Cell from "./Cell"
 import { getCells } from "../redux/selectors"
 import { addCell, removeCell } from "../redux/actions"
 import { useDispatch } from "react-redux"
-import { todayChart } from "../helpers/todayDate"
+import { todayChart } from "../helpers/Dates"
 
 function Category(props) {
 

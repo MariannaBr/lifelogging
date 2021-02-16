@@ -39,16 +39,16 @@ function userPage() {
     fetchDataFromFirestore(AuthUser.id)
     
     return (
-        <div className="bg-gray-900 relative h-screen">
+        <div className="bg-gray-900 relative h-full">
             <Header email={AuthUser.email} signOut={AuthUser.signOut} />
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 bg-gray-900">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 bg-gray-900 h-full">
                 <User name={AuthUser.email}/>
                 <div className="flex justify-between flex-wrap flex-grow">
                     {inputs.categories.map(cat => <Category key={cat.id} id={cat.id} name={cat.name} bg={cat.color} cells={cat.cells}/>)}
                 </div>
                 <DaySum />
                 <Link href="/userStatistics">
-                    <button type="button" className="flex gradient-background text-3xl font-extrabold px-8 py-5 justify-center rounded-lg my-20">
+                    <button type="button" className="gradient-background text-3xl font-extrabold px-8 py-5 justify-center rounded-lg mt-20 mb-60">
                         Statistics
                     </button>
                 </Link>

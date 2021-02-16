@@ -12,9 +12,9 @@ import {
     const AuthUser = useAuthUser()
 
     return (
-        <div className="bg-gray-900 relative h-full">
+        <div className="bg-gray-900 h-full">
             <Header email={AuthUser.email} signOut={AuthUser.signOut} />
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 bg-gray-900">
+            <div className="flex max-w-7xl mx-auto px-4 sm:px-6 bg-gray-900">
             <Statistics />
             </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Link from "next/link"
+import { urlObjectKeys } from "next/dist/next-server/lib/utils"
 
 function Header( { email, signOut }) {
 
@@ -46,14 +47,29 @@ function Header( { email, signOut }) {
           </div>
           }
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          { email ? (
-            <>
+          { email ? ( <> {window.location.pathname === "/" ? (
             <Link href="/user">
               <a
                 className="text-base font-extrabold border border-transparent px-4 py-2 mx-6 rounded-md text-gray-900 bg-secondary hover:text-secondary hover:bg-gray-900">
               My profile
               </a>
             </Link>
+          ) : ( <> {window.location.pathname === "/userStatistics" ? (
+            <Link href="/user">
+              <a
+                className="text-base font-extrabold border border-transparent px-4 py-2 ml-6 rounded-md text-primary hover:text-gray-900 hover:bg-primary">
+              My profile
+              </a>
+            </Link>
+          ) : (null)}
+            <Link href="/">
+              <a
+                className="text-base font-extrabold border border-transparent px-4 py-2 mx-6 rounded-md text-secondary hover:text-gray-900 hover:bg-secondary">
+              Home
+              </a>
+            </Link>
+            </>
+          )}
             <button
               type="button"
               onClick={()=>{signOut()}}
@@ -125,13 +141,20 @@ function Header( { email, signOut }) {
             </div>
           </div>
           <div className="py-6 px-5 space-y-6">
-          { email ? (
-            <>
+          { email ? ( <> {window.location.pathname === "/" ? (
             <Link href='/user'>
               <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-primary hover:text-primary hover:bg-gray-900">
                 My profile
               </a>
             </Link>
+          ) : (
+            <Link href='/'>
+              <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-primary hover:text-primary hover:bg-gray-900">
+                Home
+              </a>
+            </Link>
+          )}
+            
             <button
              type="button"
              onClick={()=>{signOut()}}

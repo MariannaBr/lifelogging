@@ -5,13 +5,17 @@ const inputs = {
         color: 'green',
         cells: [
             {
-                name: "fine",
-            }, {
                 name: "happy",
+            }, {
+                name: "motivated",
             }, {
                 name: "energetic",
             }, {
-                name: "motivated",
+                name: "sad",
+            }, {
+                name: "frustrated",
+            }, {
+                name: "depressed",
             }
         ]
     }, {
@@ -22,24 +26,30 @@ const inputs = {
             {
                 name: "bread",
             }, {
-                name: "potatoes",
+                name: "meat",
             }, {
-                name: "pasta",
+                name: "fish",
             }, {
-                name: "rice",
-            }
+                name: "dairy",
+            }, {
+                name: "fruits",
+            }, {
+                name: "vegetables",
+            },
         ]
     }, {
         id: 2,
-        name: "liquids",
+        name: "fluids",
         color: 'red',
         cells: [
             {
                 name: "water",
             }, {
-                name: "wine",
+                name: "tea",
             }, {
                 name: "coffee",
+            }, {
+                name: "alcohol",
             }
         ]
     }, {
@@ -54,7 +64,9 @@ const inputs = {
             }, {
                 name: "iron",
             }, {
-                name: "BCCA",
+                name: "magnesium",
+            }, {
+                name: "vitamin D",
             }
         ]
     }, {
@@ -63,11 +75,11 @@ const inputs = {
         color: 'gray',
         cells: [
             {
-                name: "run",
+                name: "low intensity",
             }, {
-                name: "bike",
+                name: "medium intensity",
             }, {
-                name: "swim",
+                name: "high intensity",
             }
         ]
     }, {
@@ -83,27 +95,20 @@ const inputs = {
                 name: "tender breasts",
             }, {
                 name: "backpain",
+            }, {
+                name: "diarrhea",
+            }, {
+                name: "constipation",
+            }, {
+                name: "fatigue",
+            }, {
+                name: "full energy",
             }
         ]
     }, {
         id: 6,
-        name: "menst. cycle",
-        color: 'indigo',
-        cells: [
-            {
-                name: "menstruation",
-            }, {
-                name: "weak bleeding",
-            }, {
-                name: "medium bleeding",
-            }, {
-                name: "heavy bleeding",
-            }
-        ]
-    }, {
-        id: 7,
         name: "sleep",
-        color: 'purple',
+        color: 'indigo',
         cells: [
             {
                 name: "restless",
@@ -119,6 +124,23 @@ const inputs = {
                 name: "8-9h",
             }, {
                 name: "10-11h",
+            }
+        ]
+    }, {
+        id: 7,
+        name: "menst. cycle",
+        color: 'purple',
+        cells: [
+            {
+                name: "ovulation",
+            }, {
+                name: "menstruation",
+            }, {
+                name: "weak bleeding",
+            }, {
+                name: "medium bleeding",
+            }, {
+                name: "heavy bleeding",
             }
         ]
     }]

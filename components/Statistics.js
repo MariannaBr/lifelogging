@@ -25,9 +25,9 @@ function Statistics() {
 
 
     return (
-        <div className=" mt-20 relative">
-            <div className="mb-10 text-4xl font-bold relative flex justify-center">
-                <span className="gradient-text">Statistics</span>
+        <div className=" mt-20">
+            <div className="relative mb-10 text-4xl font-bold flex justify-center">
+                <span className="flex relative justify-center gradient-text">Statistics</span>
             </div>
             <div>
                 {inputs.categories.map((category) => 

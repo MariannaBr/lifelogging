@@ -43,7 +43,7 @@ function userPage() {
             <Header email={AuthUser.email} signOut={AuthUser.signOut} />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 bg-gray-900 h-full">
                 <User name={AuthUser.email}/>
-                <div className="flex justify-between flex-wrap flex-grow">
+                <div className="grid grid-cols-3 gap-y-6 gap-x-3 sm:gap-x-8 lg:flex lg:justify-between lg:flex-wrap lg:flex-grow">
                     {inputs.categories.map(cat => <Category key={cat.id} id={cat.id} name={cat.name} bg={cat.color} cells={cat.cells}/>)}
                 </div>
                 <DaySum />

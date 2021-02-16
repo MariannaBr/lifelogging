@@ -20,7 +20,7 @@ function Category(props) {
     return (
         <div className="relative inline-block text-left">
             <div>
-                <button type="button" onClick={HandleClick} className={`inline-flex justify-center w-full rounded-lg border border-gray-300 shadow-sm px-3 py-2 bg-${props.bg}-300 text-sm sm:text-lg font-medium text-gray-700
+                <button type="button" onClick={HandleClick} className={`inline-flex justify-center w-full rounded-lg border border-gray-300 shadow-sm px-3 py-2 bg-${props.bg}-300 text-sm sm:text-base md:text-lg font-medium text-gray-700
                  hover:bg-${props.bg}-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-300`}
                  id={props.id} aria-haspopup="true" aria-expanded="true"> {props.name}
                 </button>

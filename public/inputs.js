@@ -126,32 +126,26 @@ const inputs = {
                 name: "10-11h",
             }
         ]
-    }, {
-        id: 7,
-        name: "menst. cycle",
-        color: 'purple',
-        cells: [
-            {
-                name: "ovulation",
-            }, {
-                name: "menstruation",
-            }, {
-                name: "weak bleeding",
-            }, {
-                name: "medium bleeding",
-            }, {
-                name: "heavy bleeding",
-            }
-        ]
-    }]
+        },
+    //{
+    //     id: 7,
+    //     name: "menst. cycle",
+    //     color: 'purple',
+    //     cells: [
+    //         {
+    //             name: "ovulation",
+    //         }, {
+    //             name: "menstruation",
+    //         }, {
+    //             name: "weak bleeding",
+    //         }, {
+    //             name: "medium bleeding",
+    //         }, {
+    //             name: "heavy bleeding",
+    //         }
+    //     ]
+    // }
+    ]
 }
 
 export default inputs
-
-// mood: ["motivated", "mood swings", "sad", "emotional", "overwelmed", "irritable", "frustrated"]
-// food: ["chicken", "fish", "beef", "cheese", "eggs", "yogurt", "chocolate", "fruits", "vegetables"]
-// liquids: ["beer", "white russian", "electrolytes", "tea"]
-// suplements: ["magnesium", "vitamin B", "multivitamin", "vitamin D3"]
-// workouts: ["strength", "hike", "flying", "skitour", "climb"]
-// body: ["bloating", "nausea", "cramps", "diarrhea", "constipation", "fatigue", "muscle pain - workout", "muscle pain - illness"]
-// menst.cycle: ["heavy bleeding", "painless", "painful", "cramps", "cravings", "follicular phase", "ovulation", "luteal phase"]

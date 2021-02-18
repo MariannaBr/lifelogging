@@ -26,7 +26,6 @@
     "redux-firestore": "^0.14.0",
     "tailwindcss": "^2.0.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",

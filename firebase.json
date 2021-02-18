@@ -6,7 +6,8 @@
     "rewrites": [
       {
         "source": "**",
-        "function": "nextServer"
+        "function": "nextServer",
+        "destination": "/index.html"
       }
     ]
   },

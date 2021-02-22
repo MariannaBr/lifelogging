@@ -41,11 +41,11 @@ function CategoryChart(props) {
     const chartHeight = (props.defaultCells.length*50).toString()
 
     return (
-        <div className="flex flex-row">
+        <div className="">
             <div className={`text-lg w-1/5 font-semibold text-${props.color}-400`}>
                 {props.id}
             </div>
-            <div>
+            <div className="">
                 <Chart options={chartOptions(props.color)} series={Series} type="heatmap" width={chartWidth} height={chartHeight}/>
             </div>
             

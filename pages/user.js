@@ -39,7 +39,7 @@ function userPage() {
     fetchDataFromFirestore(AuthUser.id)
     
     return (
-        <div className="bg-gray-900 relative h-full">
+        <div className="bg-gray-900 h-full min-h-screen">
             <Header email={AuthUser.email} signOut={AuthUser.signOut} />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 bg-gray-900 h-full">
                 <User name={AuthUser.email}/>
@@ -48,7 +48,7 @@ function userPage() {
                 </div>
                 <DaySum />
                 <Link href="/userStatistics">
-                    <button type="button" className="gradient-background text-3xl font-extrabold px-8 py-5 justify-center rounded-lg mt-20 mb-60">
+                    <button type="button" className="gradient-background text-3xl font-extrabold px-8 py-5 justify-center rounded-lg mt-20 mb-40">
                         Statistics
                     </button>
                 </Link>

@@ -141,7 +141,7 @@ function Header( { email, signOut }) {
             </div>
           </div>
           <div className="py-6 px-5 space-y-6">
-          { email ? ( <> {window.location.pathname === "/" ? (
+          { email ? ( <> {window.location.pathname === "/" || window.location.pathname === "/userStatistics" ? (
             <Link href='/user'>
               <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-primary hover:text-primary hover:bg-gray-900">
                 My profile

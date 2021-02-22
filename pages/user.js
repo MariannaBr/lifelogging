@@ -9,11 +9,12 @@ import {
     withAuthUserTokenSSR,
     AuthAction,
   } from 'next-firebase-auth'
-import firebase from "../utils/initFirebase"
+import firebase, { initFirebase } from "../utils/initFirebase"
 import { setState } from "../redux/actions"
 import { useDispatch } from "react-redux"
 import Link from "next/link"
 
+initFirebase()
 const db = firebase.firestore()
 
 function userPage() {

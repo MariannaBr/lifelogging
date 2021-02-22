@@ -1,5 +1,6 @@
-import firebase from "../utils/initFirebase"
+import firebase, { initFirebase } from "../utils/initFirebase"
 
+initFirebase()
 const db = firebase.firestore()
 
 const addDataToFirestore = async (userId, userData) => {

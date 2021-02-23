@@ -12,7 +12,7 @@ import {
     const AuthUser = useAuthUser()
 
     return (
-        <div className="bg-gray-900 h-full  grid grid-col-1">
+        <div className="bg-gray-900 h-full grid">
             <Header email={AuthUser.email} signOut={AuthUser.signOut} />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 bg-gray-900">
               <Statistics />

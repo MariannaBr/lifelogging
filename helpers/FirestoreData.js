@@ -4,16 +4,17 @@ initFirebase()
 const db = firebase.firestore()
 
 const addDataToFirestore = async (userId, userData) => {
+
     try {
         if (userId) {
             const userRef = db.collection('users').doc(userId)
             const user = await userRef.get()
-            if (user.exists) {
-                console.log("was updated")
+            if (user.exists && Object.keys(userData).length > 0) {
                 await userRef.update({data: userData})
-            } else {
-                console.log("was added")
+                console.log("user was updated")
+            } else if (!user.exists)  {
                 await userRef.set({id: userId, data: userData})
+                console.log("user was added")
             }
         } 
     } catch (e) {
@@ -21,4 +22,4 @@ const addDataToFirestore = async (userId, userData) => {
     }
 }
 
-export { addDataToFirestore } 
+export { addDataToFirestore }

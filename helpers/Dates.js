@@ -20,6 +20,7 @@ let month_chart = ((month_num + 1) < 10 ? '0' : '') + (month_num + 1).toString()
 let day_chart = (day < 10 ? '0' : '') + (day.toString())
 const todayChart = year.toString() + "-" + month_chart + "-" + day_chart
 
+
 // generate a first date for chart (1 month earlier than today)
 
 let firstDayChart_year = year
@@ -31,4 +32,4 @@ if (lastMonth_num < 0) {
 }
 const firstDayChart = firstDayChart_year.toString() + "-" + lastMonth + "-" + day_chart
 
-export {todayGreeting, todayChart, firstDayChart }
+export { todayGreeting, todayChart, firstDayChart }

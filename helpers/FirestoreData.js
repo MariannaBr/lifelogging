@@ -21,4 +21,4 @@ const addDataToFirestore = async (userId, userData) => {
     }
 }
 
-export { addDataToFirestore }
+export { addDataToFirestore } 

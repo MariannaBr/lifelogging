@@ -54,7 +54,7 @@ const inputs = {
         ]
     }, {
         id: 3,
-        name: "suplements",
+        name: "supplements",
         color: 'pink',
         cells: [
             {

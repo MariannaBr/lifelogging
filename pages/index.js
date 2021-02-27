@@ -20,6 +20,13 @@ function HomePage() {
                         <div className="flex justify-end"><span className="gradient-text text-base sm:text-2xl lg:text-3xl xl:text-4xl leading-2 font-serif font-semibold">use data to understand your body</span></div>
                     </div>
                 </div>
+                {/* <div className="flex">
+                    <div className="grid grid-cols-3 gap-x-8">
+                        <img src="userpage.png"></img>
+                        <img src="categories.png"></img>
+                        <img src="graphs.png"></img>
+                    </div>
+                </div> */}
             </div>
             
         </div>

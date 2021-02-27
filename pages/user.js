@@ -30,7 +30,11 @@ function userPage() {
                 if (user.exists) {
                     console.log("user found")
                     let userData = user.data().data
+                    console.log(userData)
                     dispatch(setState(userData))
+                } else if (!user.exists) {
+                    dispatch(setState({}))
+                    console.log("new user")
                 }
             }
         } catch (e) {

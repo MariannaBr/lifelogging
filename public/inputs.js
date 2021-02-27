@@ -1,30 +1,13 @@
 const inputs = {
     categories: [{
-        id: 0,
-        name: "mood",
+        id: 1,
+        name: "food",
         color: 'green',
         cells: [
             {
-                name: "happy",
-            }, {
-                name: "motivated",
-            }, {
-                name: "energetic",
-            }, {
-                name: "sad",
-            }, {
-                name: "frustrated",
-            }, {
-                name: "depressed",
-            }
-        ]
-    }, {
-        id: 1,
-        name: "food",
-        color: 'yellow',
-        cells: [
-            {
                 name: "bread",
+            }, {
+                name: "pasta",
             }, {
                 name: "meat",
             }, {
@@ -40,7 +23,7 @@ const inputs = {
     }, {
         id: 2,
         name: "fluids",
-        color: 'red',
+        color: 'yellow',
         cells: [
             {
                 name: "water",
@@ -55,7 +38,7 @@ const inputs = {
     }, {
         id: 3,
         name: "supplements",
-        color: 'pink',
+        color: 'red',
         cells: [
             {
                 name: "omega-3",
@@ -69,20 +52,44 @@ const inputs = {
                 name: "vitamin D",
             }
         ]
-    }, {
-        id: 4,
-        name: "workouts",
-        color: 'gray',
+    },
+    //  {
+    //     id: 4,
+    //     name: "workouts",
+    //     color: 'gray',
+    //     cells: [
+    //         {
+    //             name: "low intensity",
+    //         }, {
+    //             name: "medium intensity",
+    //         }, {
+    //             name: "high intensity",
+    //         }
+    //     ]
+    // },
+    {
+        id: 0,
+        name: "mood",
+        color: 'pink',
         cells: [
             {
-                name: "low intensity",
+                name: "happy",
             }, {
-                name: "medium intensity",
+                name: "motivated",
             }, {
-                name: "high intensity",
+                name: "energetic",
+            }, {
+                name: "sad",
+            }, {
+                name: "frustrated",
+            }, {
+                name: "depressed",
+            }, {
+                name: "anxious",
             }
         ]
-    }, {
+    },
+    {
         id: 5,
         name: "body",
         color: 'blue',
@@ -92,9 +99,9 @@ const inputs = {
             }, {
                 name: "acne",
             }, {
-                name: "tender breasts",
-            }, {
                 name: "backpain",
+            }, {
+                name: "stomach ache",
             }, {
                 name: "diarrhea",
             }, {
@@ -108,7 +115,7 @@ const inputs = {
     }, {
         id: 6,
         name: "sleep",
-        color: 'indigo',
+        color: 'purple',
         cells: [
             {
                 name: "restless",

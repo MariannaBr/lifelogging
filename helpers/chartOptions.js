@@ -1,3 +1,5 @@
+// https://apexcharts.com/docs/options/plotoptions/#
+
 export default function chartOptions(categoryColor) {
     
     let chartColor = ""
@@ -48,7 +50,7 @@ export default function chartOptions(categoryColor) {
                 hideOverlappingLabels: true,
                 minHeight: 0
             },
-            tickAmount: 7,
+            tickAmount: 15,
             axisBorder: {
                 offsetY: 7
             }
@@ -60,7 +62,7 @@ export default function chartOptions(categoryColor) {
                     colors: [chartColor],
                     fontSize: "14px"
                 }
-            }
+            },
         },
         plotOptions: {
             heatmap: {
@@ -74,11 +76,41 @@ export default function chartOptions(categoryColor) {
                         color: "#111827"
                     }, {
                         from: 1,
-                        to: 2,
+                        to: 5,
                         color: chartColor
                     }]
                 }
             }
+        },
+        grid: {
+            show: true,
+            borderColor: '#4B5563',
+            strokeDashArray: 1,
+            position: 'front',
+            xaxis: {
+                lines: {
+                    show: true
+                }
+            },   
+            yaxis: {
+                lines: {
+                    show: true
+                }
+            },  
+            row: {
+                colors: undefined,
+                opacity: 0.5
+            },  
+            column: {
+                colors: undefined,
+                opacity: 0.5
+            },  
+            padding: {
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },  
         }
     }
     return options
